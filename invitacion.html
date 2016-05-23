@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Embudo Electoral Invitación</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/font/flaticon.css">
+
+</head>
+<body id="invitacion">
+	<!-- ////////////////////////// PRELOADER ////////////////////////// -->
+	<!-- <div class="preloader"> 
+	  <div class="progress">
+	    <div class="indeterminate"></div>
+	  </div> 
+	</div> -->
+
+	<div class="menu">
+		<ul class="menu__lista">
+			<li class="menu__listaItem inicio"><i class="flaticon-buildings"></i><a href="login.html">Inicio</a></li>
+			<li class="menu__listaItem fichapersonal"><i class="flaticon-people-2"></i><a href="fichapersonal.html">Ficha Personal</a></li>
+			<li class="menu__listaItem invitacion"><i class="icon-share"></i><a href="javascript:;">Invitación Manual</a></li>
+			<li class="menu__listaItem rankingcits"><i class="flaticon-signs-1"></i><a href="ranking.html">Rankings</a></li>
+			<li class="menu__listaItem cerrar"><img src="images/cerrar.svg" alt="" width="21"><a href="">Cerrar Sesión</a></li>
+		</ul>
+	</div>
+
+	<div class="container">
+	  <div class="row">
+
+	  	<header class="header">
+	  		<div class="container">
+	  			<div class="row">
+	  				<div class="col-xs-12">
+	  					<i class="flaticon-menu"></i>
+	  					<p class="title">Invitación Manual</p>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</header>
+
+			<div class="col-xs-12">
+				<form action="">
+					<!-- NOMBRE -->
+					<div class="ingreso__caja">
+						<span class="ingreso__azul"><i class="flaticon-people-2"></i></span>
+						<input class="ingreso__input" type="text" placeholder="Nombre">
+					</div>
+					
+					<!-- RUT -->
+					<div class="ingreso__caja">
+						<span class="ingreso__azul"><i class="flaticon-id-card"></i></span>
+						<input class="ingreso__input" type="password" placeholder="Rut">
+					</div>
+						
+					<!-- CORREO -->
+					<div class="ingreso__caja">
+						<span class="ingreso__azul"><i class="flaticon-mail"></i></span>
+						<input class="ingreso__input" type="text" placeholder="Correo">
+					</div>
+
+					<button class="button">Enviar Invitación</button>
+				</form>
+			</div>
+	  </div>
+	</div>
+
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		$(function(){
+			var tuty = 1;
+			$(".flaticon-menu").click(function(){
+				var $body = $("body"),
+				    $menu = $('.menu').width();
+				$($body).toggleClass("open")
+				$('.menu').toggleClass("shadow");
+				
+				if ($body.hasClass("open")) {
+					$($body).animate({
+				    left: +$menu
+				  }, 200);
+				}else{
+					$($body).animate({
+				    left: "0"
+				  }, 100);
+				}
+			})
+		})
+	</script>
+</body>
+</html>
