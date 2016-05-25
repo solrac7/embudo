@@ -47,6 +47,18 @@ body
 	margin: 0 auto 15px auto
 	width: 240px
 
+.ingreso__caja.ok
+	background-color: rgba(0, 213, 140, .1)
+	border: solid 1px #00d58c
+	.ingreso__azul
+		background: #00d58c
+
+.ingreso__caja.error
+	background-color: rgba(232, 56, 81, .1)
+	border: solid 1px #e83851
+	.ingreso__azul
+		background: #e83851
+
 .ingreso__azul
 	background: #0099f1
 	display: inline-block
@@ -148,7 +160,7 @@ body
 	color: white
 	font-size: 18px
 	display: inline-block
-	margin: 12px 0 0 20px
+	margin: 12px 0 0 30px
 
 //////////////////////  MENÚ  //////////////////////
 
@@ -251,6 +263,11 @@ body
 	font-weight: 700
 	margin-top: 0
 
+.modal 
+	.perfil__dir
+		color: #4b4d52
+		margin-bottom: 35px
+
 
 .datos
 	background-color: rgba(100, 105, 121, .1)
@@ -333,10 +350,19 @@ body
 .ranking__item
 	display: block
 	padding: 5px 0
-	padding: 17px 15px
+	padding: 12px 15px
 	position: relative
 	border-bottom: solid 1px #c6c7ca
 	border-top: solid 1px white
+
+#ranking 
+	.ranking__item
+		padding: 7px 15px
+	.ranking__photo
+		margin-top: -29px
+	.ranking__circle
+		top: 22px
+
 
 .ranking__photo
 	border-radius: 50%
@@ -348,7 +374,7 @@ body
 	display: inline-block
 	position: relative
 	top: 50%
-	margin-top: -19px
+	margin-top: -13px
 
 .ranking__txt
 	display: inline-block
@@ -360,6 +386,12 @@ body
 	font-weight: 700
 	margin-bottom: 0
 	margin-top: 0
+
+.ranking__vermas
+	font-size: 10px
+	color: #4b4d52
+	margin: 0
+	text-decoration: underline
 
 .ranking__numbers
 	font-size: 10px
@@ -375,7 +407,7 @@ body
 	padding: 3px 7px
 	position: absolute
 	right: 15px
-	top: 25px
+	top: 21px
 	border-radius: 50%
 
 .tu
@@ -385,7 +417,8 @@ body
 		border: solid 2px white
 
 	.ranking__name,
-	.ranking__numbers
+	.ranking__numbers,
+	.ranking__vermas
 		color: white
 
 	.ranking__circle
@@ -397,6 +430,10 @@ body
 	border-top: solid 1px #29a9f3
 	padding-top: 3px
 	padding-bottom: 3px
+	.col-xs-3	
+		text-align: center
+		padding-left: 5px
+		padding-right: 5px
 
 .header__rankingTab
 	text-align: center
@@ -411,6 +448,98 @@ body
 	display: block
 	border-radius: 5px
 
+.modal__container
+	padding: 15px
+	position: fixed
+	z-index: 9999999
+	width: 100vw
+	height: 100vh
+	top: -300vh
+	text-align: center
+	opacity: 0
+	-webkit-transition: all .3s ease
+	-moz-transition: all .3s ease
+	-ms-transition: all .3s ease
+	transition: all .3s ease
 
+.modal
+	background-color: white
+	border-radius: 5px
+	width: 100%
+	padding: 50px
+	text-align: center
+	position: relative
+	overflow: hidden
 
+.modal__info
+	font-size: 12px
+	color: #0099f1
+	margin: 0
+	font-weight: 400
+	margin-bottom: 5px
+	span
+		font-weight: 900
 
+.modal__cerrar
+	position: absolute
+	z-index: 9999
+	top: 9px
+	right: 9px
+	
+.background
+	display: none
+	position: fixed
+	width: 100vw
+	height: 100vh
+	z-index: 9
+	background-color: rgba(31,31,31,.8)
+
+.modal__ok
+	opacity: 1
+	top: 0
+
+.no__scroll
+	overflow: hidden
+
+//////////////  MENSAJES /////////////////
+
+.mensaje
+	border-radius: 3px
+	color: white
+	margin: 10px auto
+	text-align: left
+	max-width: 400px
+	padding: 10px
+	overflow: hidden
+	min-height: 60px
+	padding-left: 50px
+
+.mensaje__titulo
+	color: white
+	font-size: 15px
+	font-weight: 900
+	margin: 0
+
+.mensaje__bajada
+	color: white
+	font-size: 8px
+	font-weight: 900
+	margin: 0
+
+.okey
+	background: url(../images/check.svg) 10px 10px no-repeat #00d58c
+
+.wrong
+	background: url(../images/cancel.svg) 10px 10px no-repeat #e83851
+
+.alert
+	background: url(../images/right-arrow.svg) 10px 10px no-repeat #d4b166
+
+.info
+	background: url(../images/info.svg) 10px 10px no-repeat #0099f1
+
+.bgOk
+	background: url(../images/check-ok.svg) 208px 15px no-repeat
+
+.bgWrong
+	background: url(../images/wrong.svg) 210px 16px no-repeat

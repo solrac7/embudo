@@ -3,17 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Embudo Electoral Ficha personal</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/app.css">
 	<link rel="stylesheet" href="css/font/flaticon.css">
 
 </head>
 <body id="fichapersonal">
-
+	<div class="background"></div>
 	<div class="menu">
 		<ul class="menu__lista">
-			<li class="menu__listaItem inicio"><i class="flaticon-buildings"></i><a href="index.html">Inicio</a></li>
+			<li class="menu__listaItem inicio"><i class="flaticon-buildings"></i><a href="login.html">Inicio</a></li>
 			<li class="menu__listaItem fichapersonal"><i class="flaticon-people-2"></i><a href="javascript:;">Ficha Personal</a></li>
 			<li class="menu__listaItem invitacion"><i class="icon-share"></i><a href="invitacion.html">Invitación Manual</a></li>
 			<li class="menu__listaItem rankingcits"><i class="flaticon-signs-1"></i><a href="ranking.html">Rankings</a></li>
@@ -97,7 +97,7 @@
 
 	<!-- RANKING -->
 	<div class="ranking">
-		<a class="ranking__item" href="login.html">
+		<a class="ranking__item" href="javascript:;">
 			<div class="ranking__circle">1</div>
 			<img class="ranking__photo" src="images/photo.jpg" alt="foto perfil">
 			<div class="ranking__txt">
@@ -106,7 +106,7 @@
 			</div>
 		</a>
 
-		<a class="ranking__item" href="login.html">
+		<a class="ranking__item" href="javascript:;">
 			<div class="ranking__circle">2</div>
 			<img class="ranking__photo" src="images/photo.jpg" alt="foto perfil">
 			<div class="ranking__txt">
@@ -115,7 +115,7 @@
 			</div>
 		</a>
 
-		<a class="ranking__item tu" href="login.html">
+		<a class="ranking__item tu" href="javascript:;">
 			<div class="ranking__circle">3</div>
 			<img class="ranking__photo" src="images/photo.jpg" alt="foto perfil">
 			<div class="ranking__txt">
@@ -124,7 +124,7 @@
 			</div>
 		</a>
 
-		<a class="ranking__item" href="login.html">
+		<a class="ranking__item" href="javascript:;">
 			<div class="ranking__circle">4</div>
 			<img class="ranking__photo" src="images/photo.jpg" alt="foto perfil">
 			<div class="ranking__txt">
@@ -133,7 +133,7 @@
 			</div>
 		</a>
 
-		<a class="ranking__item" href="login.html">
+		<a class="ranking__item" href="javascript:;">
 			<div class="ranking__circle">5</div>
 			<img class="ranking__photo" src="images/photo.jpg" alt="foto perfil">
 			<div class="ranking__txt">
@@ -142,7 +142,7 @@
 			</div>
 		</a>
 
-		<a class="ranking__item" href="login.html">
+		<a class="ranking__item" href="javascript:;">
 			<div class="ranking__circle">6</div>
 			<img class="ranking__photo" src="images/photo.jpg" alt="foto perfil">
 			<div class="ranking__txt">
@@ -151,7 +151,7 @@
 			</div>
 		</a>
 
-		<a class="ranking__item" href="login.html">
+		<a class="ranking__item" href="javascript:;">
 			<div class="ranking__circle">7</div>
 			<img class="ranking__photo" src="images/photo.jpg" alt="foto perfil">
 			<div class="ranking__txt">
@@ -165,18 +165,20 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>
 		$(function(){
-			var tuty = 1;
 			$(".flaticon-menu").click(function(){
 				var $body = $("body"),
+						$background = $(".background"),
 				    $menu = $('.menu').width();
-				$($body).toggleClass("open")
-				$('.menu').toggleClass("shadow");
+
+				$($background).fadeIn("fast");
+				$($body).toggleClass("open no__scroll")
 				
 				if ($body.hasClass("open")) {
 					$($body).animate({
 				    left: +$menu
 				  }, 200);
 				}else{
+					$($background).fadeOut("fast");
 					$($body).animate({
 				    left: "0"
 				  }, 100);
